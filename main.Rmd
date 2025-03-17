@@ -1,0 +1,52 @@
+---
+title: "Main"
+output: html_notebook
+---
+
+Description: Main script.
+
+# 01. Setup
+
+Install and load packages
+
+```{r}
+# Run setup script
+source("01_setup.R")
+
+```
+
+# 02. Run import script
+
+All raw data should be located in the folder "raw" within the "data" folder. The script reads all occurrence files located in the folder "occurrences" within raw data folder, merges them together and adds information from "taxonlist.xlsx" and "info.xlsx" to create a complete occurrence dataset for the project.
+
+Result: Two dataframes, "occurrences_df" and "occurrences_highertaxa_df".
+
+```{r}
+# Run import script
+source("02_import.R")
+
+```
+
+# 3 Data cleaning
+
+Perform any necessary tidying steps. For instance, handling special characters or adjusting individual counts according to sub-sampling procedures.
+
+```{r}
+# Tidy occurrence datasets
+source("03_tidy.R")
+
+```
+
+# 4. Load main dataframes
+
+If data import ("02_import.R") and cleaning ("03_tidy") has been performed previously and no updates are needed, the occurrence dataset can be loaded directly.
+
+```{r}
+# Occurrence dataset
+load(here::here("data","processed","occurrences_df.Rda"))
+
+# Occurrence highertaxa dataset
+load(here::here("data","processed","occurrences_highertaxa_df.Rda"))
+
+
+```

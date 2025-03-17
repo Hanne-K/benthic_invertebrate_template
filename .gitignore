@@ -1,0 +1,21 @@
+# R and RStudio files
+.Rproj.user
+.Rhistory
+.RData
+.Ruserdata
+
+# Logs and temporary files
+*.log
+*.out
+*.tmp
+*.swp
+*.bak
+
+# Data files (optional, depending on whether you want to track them)
+data/raw/       # Ignore raw data (if you don't want to commit it)
+data/processed/ # Ignore processed data
+results/
+
+# Cache and dependencies
+.Renviron       # Environment variables (e.g., API keys)
+.Rprofile       # R profile settings
