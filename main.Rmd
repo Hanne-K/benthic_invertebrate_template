@@ -50,3 +50,12 @@ load(here::here("data","processed","occurrences_highertaxa_df.Rda"))
 
 
 ```
+
+# Report packages used
+
+```{r}
+
+# Citing all packages used, including the package versions.
+report::cite_packages()
+
+```
